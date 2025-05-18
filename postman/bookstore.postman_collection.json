@@ -8,34 +8,565 @@
 	},
 	"item": [
 		{
-			"name": "books",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url_host}}/books?page=0&size=10",
-					"host": [
-						"{{url_host}}"
-					],
-					"path": [
-						"books"
-					],
-					"query": [
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "jefferson.ximenes11@outlook.com",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "AbTp9!fok",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_host}}/auth/login",
+							"host": [
+								"{{url_host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
 						{
-							"key": "page",
-							"value": "0"
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "email",
+										"value": "jefferson.ximenes11@outlook.com",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "AbTp9!fok",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_host}}/auth/login",
+									"host": [
+										"{{url_host}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "ACL, CANCELUPLOAD, CHECKIN, CHECKOUT, COPY, DELETE, GET, HEAD, LOCK, MKCALENDAR, MKCOL, MOVE, OPTIONS, POST, PROPFIND, PROPPATCH, PUT, REPORT, SEARCH, UNCHECKOUT, UNLOCK, UPDATE, VERSION-CONTROL"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "3600"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Key, Authorization"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "247"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 May 2025 02:07:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWZmZXJzb24ueGltZW5lczExQG91dGxvb2suY29tIiwiaWF0IjoxNzQ3NDQ3NjU3LCJleHAiOjE3NDc0NTEyNTd9.Gsqhf-Ihuop2sWQXwLQE4rKpVNIFkqsjnoI6fxWSFUI\",\n    \"type\": \"Bearer \",\n    \"name\": \"Jefferson Ximenes\",\n    \"expiration\": \"2025-05-17T00:00:00\",\n    \"access\": \"[USER]\"\n}"
 						},
 						{
-							"key": "size",
-							"value": "10"
+							"name": "401",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "email",
+										"value": "usetnotfound.ximenes11@outlook.com",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "AbTp9!fok",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_host}}/auth/login",
+									"host": [
+										"{{url_host}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "ACL, CANCELUPLOAD, CHECKIN, CHECKOUT, COPY, DELETE, GET, HEAD, LOCK, MKCALENDAR, MKCOL, MOVE, OPTIONS, POST, PROPFIND, PROPPATCH, PUT, REPORT, SEARCH, UNCHECKOUT, UNLOCK, UPDATE, VERSION-CONTROL"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "3600"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Key, Authorization"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 May 2025 02:08:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "email",
+								"value": "jefferson.ximenes11@outlook.com",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "AbTp9!fok",
+								"type": "text"
+							},
+							{
+								"key": "name",
+								"value": "Jefferson Ximenes",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_host}}/auth/register",
+							"host": [
+								"{{url_host}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "email",
+										"value": "jefferson.ximenes11@outlook.com",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "AbTp9!fok",
+										"type": "text"
+									},
+									{
+										"key": "name",
+										"value": "Jefferson Ximenes",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_host}}/auth/register",
+									"host": [
+										"{{url_host}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "ACL, CANCELUPLOAD, CHECKIN, CHECKOUT, COPY, DELETE, GET, HEAD, LOCK, MKCALENDAR, MKCOL, MOVE, OPTIONS, POST, PROPFIND, PROPPATCH, PUT, REPORT, SEARCH, UNCHECKOUT, UNLOCK, UPDATE, VERSION-CONTROL"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "3600"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Key, Authorization"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 May 2025 01:47:57 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "email",
+										"value": "jefferson.ximenes11@outlook.com",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "AbTp9!fok",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_host}}/auth/register",
+									"host": [
+										"{{url_host}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "ACL, CANCELUPLOAD, CHECKIN, CHECKOUT, COPY, DELETE, GET, HEAD, LOCK, MKCALENDAR, MKCOL, MOVE, OPTIONS, POST, PROPFIND, PROPPATCH, PUT, REPORT, SEARCH, UNCHECKOUT, UNLOCK, UPDATE, VERSION-CONTROL"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "3600"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Key, Authorization"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "183"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 May 2025 02:19:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2025-05-16T23:19:30\",\n    \"status\": 400,\n    \"title\": \"Business rule violated\",\n    \"detail\": [\n        \"Usuário já cadastrado.\"\n    ],\n    \"type\": \"br.com.bookstore.exception.ResourceValidationException\"\n}"
+						},
+						{
+							"name": "400 (senha não atende aos critérios)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "email",
+										"value": "jefferson.ximenes11@outlook.com",
+										"type": "text"
+									},
+									{
+										"key": "password",
+										"value": "123",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url_host}}/auth/register",
+									"host": [
+										"{{url_host}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "ACL, CANCELUPLOAD, CHECKIN, CHECKOUT, COPY, DELETE, GET, HEAD, LOCK, MKCALENDAR, MKCOL, MOVE, OPTIONS, POST, PROPFIND, PROPPATCH, PUT, REPORT, SEARCH, UNCHECKOUT, UNLOCK, UPDATE, VERSION-CONTROL"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "3600"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Key, Authorization"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "373"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 May 2025 02:38:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2025-05-16T23:38:50\",\n    \"status\": 400,\n    \"title\": \"Business rule violated\",\n    \"detail\": [\n        \"A senha deve ter pelo menos 9 caracteres.\",\n        \"A senha deve conter ao menos uma letra maiúscula.\",\n        \"A senha deve conter ao menos uma letra minúscula.\",\n        \"A senha deve conter ao menos um caractere especial: !@#$%^&*()-+\"\n    ],\n    \"type\": \"br.com.bookstore.exception.ResourceValidationException\"\n}"
 						}
 					]
 				}
-			},
-			"response": [
+			]
+		},
+		{
+			"name": "books",
+			"item": [
 				{
-					"name": "200",
-					"originalRequest": {
+					"name": "books",
+					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -58,78 +589,81 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "X-Total-Pages",
-							"value": "5"
-						},
-						{
-							"key": "X-Total-Elements",
-							"value": "51"
-						},
-						{
-							"key": "X-Current-Page",
-							"value": "0"
-						},
-						{
-							"key": "X-Page-Size",
-							"value": "10"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 08 May 2025 17:34:44 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"1984\",\n        \"author\": \"George Orwell\",\n        \"price\": 39.9\n    },\n    {\n        \"id\": 2,\n        \"title\": \"To Kill a Mockingbird\",\n        \"author\": \"Harper Lee\",\n        \"price\": 45\n    },\n    {\n        \"id\": 3,\n        \"title\": \"The Great Gatsby\",\n        \"author\": \"F. Scott Fitzgerald\",\n        \"price\": 29.9\n    },\n    {\n        \"id\": 4,\n        \"title\": \"Harry Potter and the Sorcerer's Stone\",\n        \"author\": \"J.K. Rowling\",\n        \"price\": 59.99\n    },\n    {\n        \"id\": 5,\n        \"title\": \"The Lord of the Rings\",\n        \"author\": \"J.R.R. Tolkien\",\n        \"price\": 79.9\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Pride and Prejudice\",\n        \"author\": \"Jane Austen\",\n        \"price\": 35.5\n    },\n    {\n        \"id\": 7,\n        \"title\": \"The Da Vinci Code\",\n        \"author\": \"Dan Brown\",\n        \"price\": 42\n    },\n    {\n        \"id\": 8,\n        \"title\": \"One Hundred Years of Solitude\",\n        \"author\": \"Gabriel García Márquez\",\n        \"price\": 51.25\n    },\n    {\n        \"id\": 9,\n        \"title\": \"Frankenstein\",\n        \"author\": \"Mary Shelley\",\n        \"price\": 28\n    },\n    {\n        \"id\": 10,\n        \"title\": \"War and Peace\",\n        \"author\": \"Leo Tolstoy\",\n        \"price\": 62\n    }\n]"
-				}
-			]
-		},
-		{
-			"name": "books/{id}",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url_host}}/books/:id",
-					"host": [
-						"{{url_host}}"
-					],
-					"path": [
-						"books",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "1"
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_host}}/books?page=0&size=10",
+									"host": [
+										"{{url_host}}"
+									],
+									"path": [
+										"books"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Total-Pages",
+									"value": "5"
+								},
+								{
+									"key": "X-Total-Elements",
+									"value": "51"
+								},
+								{
+									"key": "X-Current-Page",
+									"value": "0"
+								},
+								{
+									"key": "X-Page-Size",
+									"value": "10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 May 2025 17:34:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"1984\",\n        \"author\": \"George Orwell\",\n        \"price\": 39.9\n    },\n    {\n        \"id\": 2,\n        \"title\": \"To Kill a Mockingbird\",\n        \"author\": \"Harper Lee\",\n        \"price\": 45\n    },\n    {\n        \"id\": 3,\n        \"title\": \"The Great Gatsby\",\n        \"author\": \"F. Scott Fitzgerald\",\n        \"price\": 29.9\n    },\n    {\n        \"id\": 4,\n        \"title\": \"Harry Potter and the Sorcerer's Stone\",\n        \"author\": \"J.K. Rowling\",\n        \"price\": 59.99\n    },\n    {\n        \"id\": 5,\n        \"title\": \"The Lord of the Rings\",\n        \"author\": \"J.R.R. Tolkien\",\n        \"price\": 79.9\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Pride and Prejudice\",\n        \"author\": \"Jane Austen\",\n        \"price\": 35.5\n    },\n    {\n        \"id\": 7,\n        \"title\": \"The Da Vinci Code\",\n        \"author\": \"Dan Brown\",\n        \"price\": 42\n    },\n    {\n        \"id\": 8,\n        \"title\": \"One Hundred Years of Solitude\",\n        \"author\": \"Gabriel García Márquez\",\n        \"price\": 51.25\n    },\n    {\n        \"id\": 9,\n        \"title\": \"Frankenstein\",\n        \"author\": \"Mary Shelley\",\n        \"price\": 28\n    },\n    {\n        \"id\": 10,\n        \"title\": \"War and Peace\",\n        \"author\": \"Leo Tolstoy\",\n        \"price\": 62\n    }\n]"
 						}
 					]
-				}
-			},
-			"response": [
+				},
 				{
-					"name": "200",
-					"originalRequest": {
+					"name": "books/{id}",
+					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -149,123 +683,112 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 08 May 2025 01:52:14 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"id\": 1,\n    \"title\": \"1984\",\n    \"author\": \"George Orwell\",\n    \"price\": 39.9,\n    \"types\": [\n        {\n            \"id\": 1,\n            \"description\": \"Kindle Edition\"\n        }\n    ],\n    \"mainGenres\": [\n        {\n            \"id\": 12,\n            \"description\": \"Ficção Científica\"\n        }\n    ],\n    \"subGenres\": [\n        {\n            \"id\": 1,\n            \"description\": \"Distopia\"\n        }\n    ]\n}"
-				},
-				{
-					"name": "404",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url_host}}/books/:id",
-							"host": [
-								"{{url_host}}"
-							],
-							"path": [
-								"books",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "555"
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_host}}/books/:id",
+									"host": [
+										"{{url_host}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
 								}
-							]
-						}
-					},
-					"status": "Not Found",
-					"code": 404,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Content-Type",
-							"value": "application/json"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 May 2025 01:52:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"title\": \"1984\",\n    \"author\": \"George Orwell\",\n    \"price\": 39.9,\n    \"types\": [\n        {\n            \"id\": 1,\n            \"description\": \"Kindle Edition\"\n        }\n    ],\n    \"mainGenres\": [\n        {\n            \"id\": 12,\n            \"description\": \"Ficção Científica\"\n        }\n    ],\n    \"subGenres\": [\n        {\n            \"id\": 1,\n            \"description\": \"Distopia\"\n        }\n    ]\n}"
 						},
 						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 08 May 2025 01:51:54 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"timestamp\": \"2025-05-07T22:51:54\",\n    \"status\": 404,\n    \"title\": \"Not Found\",\n    \"detail\": [\n        \"No item was found with the [ 555 ] entered.\"\n    ],\n    \"type\": \"br.com.bookstore.exception.ResourceNotFoundException\"\n}"
-				}
-			]
-		},
-		{
-			"name": "books/genre/{genre}",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url_host}}/books/genre/:genre?page=0&size=5",
-					"host": [
-						"{{url_host}}"
-					],
-					"path": [
-						"books",
-						"genre",
-						":genre"
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "0"
-						},
-						{
-							"key": "size",
-							"value": "5"
-						}
-					],
-					"variable": [
-						{
-							"key": "genre",
-							"value": "romance"
+							"name": "404",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_host}}/books/:id",
+									"host": [
+										"{{url_host}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "555"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 May 2025 01:51:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2025-05-07T22:51:54\",\n    \"status\": 404,\n    \"title\": \"Not Found\",\n    \"detail\": [\n        \"No item was found with the [ 555 ] entered.\"\n    ],\n    \"type\": \"br.com.bookstore.exception.ResourceNotFoundException\"\n}"
 						}
 					]
-				}
-			},
-			"response": [
+				},
 				{
-					"name": "200",
-					"originalRequest": {
+					"name": "books/genre/{genre}",
+					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -296,93 +819,93 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "X-Total-Pages",
-							"value": "2"
-						},
-						{
-							"key": "X-Total-Elements",
-							"value": "12"
-						},
-						{
-							"key": "X-Current-Page",
-							"value": "0"
-						},
-						{
-							"key": "X-Page-Size",
-							"value": "5"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 08 May 2025 17:37:36 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"id\": 2,\n        \"title\": \"To Kill a Mockingbird\",\n        \"author\": \"Harper Lee\",\n        \"price\": 45\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Pride and Prejudice\",\n        \"author\": \"Jane Austen\",\n        \"price\": 35.5\n    },\n    {\n        \"id\": 8,\n        \"title\": \"One Hundred Years of Solitude\",\n        \"author\": \"Gabriel García Márquez\",\n        \"price\": 51.25\n    },\n    {\n        \"id\": 14,\n        \"title\": \"The Book Thief\",\n        \"author\": \"Markus Zusak\",\n        \"price\": 44.8\n    },\n    {\n        \"id\": 15,\n        \"title\": \"The Little Prince\",\n        \"author\": \"Antoine de Saint-Exupéry\",\n        \"price\": 26.9\n    }\n]"
-				}
-			]
-		},
-		{
-			"name": "books/author/{author}",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url_host}}/books/author/:author?page=0&size=10",
-					"host": [
-						"{{url_host}}"
-					],
-					"path": [
-						"books",
-						"author",
-						":author"
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "0"
-						},
-						{
-							"key": "size",
-							"value": "10"
-						}
-					],
-					"variable": [
-						{
-							"key": "author",
-							"value": "George Orwell"
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_host}}/books/genre/:genre?page=0&size=5",
+									"host": [
+										"{{url_host}}"
+									],
+									"path": [
+										"books",
+										"genre",
+										":genre"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "5"
+										}
+									],
+									"variable": [
+										{
+											"key": "genre",
+											"value": "romance"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Total-Pages",
+									"value": "2"
+								},
+								{
+									"key": "X-Total-Elements",
+									"value": "12"
+								},
+								{
+									"key": "X-Current-Page",
+									"value": "0"
+								},
+								{
+									"key": "X-Page-Size",
+									"value": "5"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 May 2025 17:37:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"title\": \"To Kill a Mockingbird\",\n        \"author\": \"Harper Lee\",\n        \"price\": 45\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Pride and Prejudice\",\n        \"author\": \"Jane Austen\",\n        \"price\": 35.5\n    },\n    {\n        \"id\": 8,\n        \"title\": \"One Hundred Years of Solitude\",\n        \"author\": \"Gabriel García Márquez\",\n        \"price\": 51.25\n    },\n    {\n        \"id\": 14,\n        \"title\": \"The Book Thief\",\n        \"author\": \"Markus Zusak\",\n        \"price\": 44.8\n    },\n    {\n        \"id\": 15,\n        \"title\": \"The Little Prince\",\n        \"author\": \"Antoine de Saint-Exupéry\",\n        \"price\": 26.9\n    }\n]"
 						}
 					]
-				}
-			},
-			"response": [
+				},
 				{
-					"name": "200",
-					"originalRequest": {
+					"name": "books/author/{author}",
+					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url_host}}/books/author/:author",
+							"raw": "{{url_host}}/books/author/:author?page=0&size=10",
 							"host": [
 								"{{url_host}}"
 							],
@@ -394,89 +917,106 @@
 							"query": [
 								{
 									"key": "page",
-									"value": "0",
-									"disabled": true
+									"value": "0"
 								},
 								{
 									"key": "size",
-									"value": "5",
-									"disabled": true
+									"value": "10"
 								}
 							],
 							"variable": [
 								{
 									"key": "author",
-									"value": "Jo"
+									"value": "George Orwell"
 								}
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "X-Total-Pages",
-							"value": "0"
-						},
-						{
-							"key": "X-Total-Elements",
-							"value": "3"
-						},
-						{
-							"key": "X-Current-Page",
-							"value": "0"
-						},
-						{
-							"key": "X-Page-Size",
-							"value": "10"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Thu, 08 May 2025 17:41:12 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_host}}/books/author/:author",
+									"host": [
+										"{{url_host}}"
+									],
+									"path": [
+										"books",
+										"author",
+										":author"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "5",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "author",
+											"value": "Jo"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Total-Pages",
+									"value": "0"
+								},
+								{
+									"key": "X-Total-Elements",
+									"value": "3"
+								},
+								{
+									"key": "X-Current-Page",
+									"value": "0"
+								},
+								{
+									"key": "X-Page-Size",
+									"value": "10"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 May 2025 17:41:12 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 23,\n        \"title\": \"The Fault in Our Stars\",\n        \"author\": \"John Green\",\n        \"price\": 33.3\n    },\n    {\n        \"id\": 37,\n        \"title\": \"Me Before You\",\n        \"author\": \"Jojo Moyes\",\n        \"price\": 38.4\n    },\n    {\n        \"id\": 46,\n        \"title\": \"Blindness\",\n        \"author\": \"José Saramago\",\n        \"price\": 45.8\n    }\n]"
 						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"id\": 23,\n        \"title\": \"The Fault in Our Stars\",\n        \"author\": \"John Green\",\n        \"price\": 33.3\n    },\n    {\n        \"id\": 37,\n        \"title\": \"Me Before You\",\n        \"author\": \"Jojo Moyes\",\n        \"price\": 38.4\n    },\n    {\n        \"id\": 46,\n        \"title\": \"Blindness\",\n        \"author\": \"José Saramago\",\n        \"price\": 45.8\n    }\n]"
-				}
-			]
-		},
-		{
-			"name": "recently-viewed",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url_host}}/books/recently-viewed",
-					"host": [
-						"{{url_host}}"
-					],
-					"path": [
-						"books",
-						"recently-viewed"
 					]
-				}
-			},
-			"response": [
+				},
 				{
-					"name": "200",
-					"originalRequest": {
+					"name": "recently-viewed",
+					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -490,33 +1030,52 @@
 							]
 						}
 					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
+					"response": [
 						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 09 May 2025 01:49:34 GMT"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=60"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_host}}/books/recently-viewed",
+									"host": [
+										"{{url_host}}"
+									],
+									"path": [
+										"books",
+										"recently-viewed"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 01:49:34 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"1984\",\n        \"author\": \"George Orwell\",\n        \"price\": 39.9\n    },\n    {\n        \"id\": 2,\n        \"title\": \"To Kill a Mockingbird\",\n        \"author\": \"Harper Lee\",\n        \"price\": 45\n    }\n]"
 						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"1984\",\n        \"author\": \"George Orwell\",\n        \"price\": 39.9\n    },\n    {\n        \"id\": 2,\n        \"title\": \"To Kill a Mockingbird\",\n        \"author\": \"Harper Lee\",\n        \"price\": 45\n    }\n]"
+					]
 				}
 			]
 		}
