@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql
+    container_name: bd_bookstore
+    environment:
+      MYSQL_DATABASE: ${BD_DATABASE_BOOKSTORE:-bookstore}
+      MYSQL_ROOT_PASSWORD: ${BD_ROOT_PASSWORD_BOOKSTORE:-root}
+      MYSQL_USER: ${BD_USER_BOOKSTORE:-bookuser}
+      MYSQL_PASSWORD: ${BD_PASSWORD_BOOKSTORE:-P@ssw0rdB00k}
+    ports:
+      - "${BD_PORT_HOST_BOOKSTORE:-3307}:3306"
+    volumes:
+      - bd_bookstore:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:alpine
+    container_name: redis_bookstore
+    restart: always
+    ports:
+      - "${REDIS_PORT:-6379}:${REDIS_PORT:-6379}"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  api:
+    build: .
+    container_name: bookstore_api
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-dockerfile}
+    ports:
+      - "${API_PORT:-8080}:${API_PORT:-8080}"
+
+networks:
+  default:
+    name: bookstore_net
+
+volumes:
+  bd_bookstore:
+
